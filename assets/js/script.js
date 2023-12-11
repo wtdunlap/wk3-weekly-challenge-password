@@ -1,4 +1,81 @@
-// Assignment code here
+
+// ===========================
+// ===========================
+// Assignment code starts here
+// ===========================
+// ===========================
+
+// variables
+const lowerAlpha = "abcdefghijklmnopqrstuvwxyz";
+const upperAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numericChar = "0123456789";
+const specialChar = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+
+var length = 0;
+var isLower = false;
+var isUpper = false;
+var isNumeric = false;
+var isSpecial = false;
+var placeholder = "";
+var pending = "";
+
+// redundant arrays for final checking the password
+const lowerAlphaArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+  "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
+  "w", "x", "y", "z"];
+const upperAlphaArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+  "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
+  "W", "X", "Y", "Z"];
+const numericCharArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+const specialCharArray = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",",
+  "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[",
+  "]", "^", "_", "`", '"', ",", "{", "|", "}", "~"];
+
+
+
+
+
+
+function generatePassword() {
+
+  // reset variable to stock between runs
+  length = 0;
+  isLower = false;
+  isUpper = false;
+  isNumeric = false;
+  isSpecial = false;
+  placeholder = "";
+  pending = "";
+
+  // Prompts for configuration
+  // =========================
+  // Reruns prompt until an appropriate length has been decided
+
+  do {
+    length = parseFloat(window.prompt("How long is this thing? \nFrom 8 to 128, of course.", "Pick something"));
+    // console.log(length);
+    if (length < 8 || length > 128) {
+      // console.log(length);
+    }
+  }
+  while (length < 8 || length > 128)
+
+  // Prompts for configuration
+  isLower = window.prompt("Does this need to be lower case?", "Yea or cancel for nah");
+  isUpper = window.prompt("How about upper case?", "Yea or cancel for nah");
+  isNumeric = window.prompt("What about numbers?", "Yea or cancel for nah");
+  isSpecial = window.prompt("And those special guys?", "Yea or cancel for nah");
+
+}
+
+
+// =========================
+// =========================
+// Assignment code ends here
+// =========================
+// =========================
+
 
 
 // Get references to the #generate element
