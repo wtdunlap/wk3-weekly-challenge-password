@@ -67,6 +67,38 @@ function generatePassword() {
   isNumeric = window.prompt("What about numbers?", "Yea or cancel for nah");
   isSpecial = window.prompt("And those special guys?", "Yea or cancel for nah");
 
+  // Pull random char from lowerAlpha
+  if (isLower) {
+    for (var i = 0; i < length; i++) {
+      placeholder += lowerAlpha.charAt(Math.floor(Math.random() * lowerAlpha.length));
+    }
+  }
+
+  // Pull random char from upperAlpha
+  if (isUpper) {
+    for (i = 0; i < length; i++) {
+      placeholder += upperAlpha.charAt(Math.floor(Math.random() * upperAlpha.length));
+    }
+  }
+
+  // Pull random char from numericChar
+  if (isNumeric) {
+    for (i = 0; i < length; i++) {
+      placeholder += numericChar.charAt(Math.floor(Math.random() * numericChar.length));
+    }
+  }
+
+  // Pull random char from specialChar
+  if (isSpecial) {
+    for (i = 0; i < length; i++) {
+      placeholder += specialChar.charAt(Math.floor(Math.random() * specialChar.length));
+    }
+  }
+
+  // Pull random char from placeholder for pending password
+  for (i = 0; i < length; i++) {
+    pending += placeholder.charAt(Math.floor(Math.random() * placeholder.length));
+  }
 }
 
 
