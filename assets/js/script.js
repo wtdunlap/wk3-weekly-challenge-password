@@ -56,11 +56,19 @@ function generatePassword() {
   do {
     length = parseFloat(window.prompt("How long is this thing? \nFrom 8 to 128, of course.", "Pick something"));
     // console.log(length);
-    if (length < 8 || length > 128) {
+        if (length < 8 || length > 128) {
       // console.log(length);
     }
   }
   while (length < 8 || length > 128)
+  
+  
+  // Kills function if no number was specified, returns a message instead of password
+  if (isNaN(length)) {
+    return "Numbers for number fields please";
+  }
+
+
 
   // Prompts for configuration
   // =========================
@@ -71,6 +79,11 @@ function generatePassword() {
   isNumeric = window.prompt("What about numbers?", "Yea or cancel for nah");
   isSpecial = window.prompt("And those special guys?", "Yea or cancel for nah");
 
+
+  // Kills function if nothing was picked, returns message instead of password
+  if (!isLower && !isUpper && !isNumeric && !isSpecial) {
+    return "You gotta pick something for this to work";
+  }
 
   // Building password list
   // ======================
@@ -191,3 +204,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
